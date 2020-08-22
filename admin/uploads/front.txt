@@ -1,0 +1,761 @@
+<?php include('includes/header.php')?>
+<!-- start page container -->
+<style type="text/css">
+   .layout{
+   
+   }
+   .s1{
+   width:1px!important;
+   padding:0px!important;
+   }
+   .seat{
+   height: 40px;
+   transform: rotate(270deg);
+   -ms-transform: rotate(270deg);
+   -moz-transform: rotate(270deg);
+   -webkit-transform: rotate(270deg);
+   -o-transform: rotate(270deg);
+   }
+   .seat_mix{
+    margin:auto;
+    display: block;
+   }
+   .seat1{
+   height: 40px;
+   transform: rotate(360deg);
+   -ms-transform: rotate(360deg);
+   -moz-transform: rotate(360deg);
+   -webkit-transform: rotate(360deg);
+   -o-transform: rotate(360deg);
+   }
+   .seat2{
+   height: 40px ;
+   transform: rotate(0deg);
+   -ms-transform: rotate(0deg);
+   -moz-transform: rotate(0deg);
+   -webkit-transform: rotate(0deg);
+   -o-transform: rotate(0deg);
+   }
+   .table td, .table th {
+   border-top: 0px!important
+   }
+</style>
+<script>
+   var ns_r1 = 0;var ns_r2 = 0;var ns_r3 = 0;var ns_r4 = 0;var ns_r5 = 0;var ns_r6 = 0;
+   var ss_r1 = 0;var ss_r2 = 0;var ss_r3 = 0;var ss_r4 = 0;var ss_r5 = 0;var ss_r6 = 0;
+   var sl_r1 = 0;var sl_r2 = 0;var sl_r3 = 0;
+   var up_ns_r1 = 0;var up_ns_r2 = 0;var up_ns_r3 = 0;var up_ns_r4 = 0;var up_ns_r5 = 0;var up_ns_r6 = 0;
+   var up_ss_r1 = 0;var up_ss_r2 = 0;var up_ss_r3 = 0;var up_ss_r4 = 0;var up_ss_r5 = 0;var up_ss_r6 = 0;
+   var up_sl_r1 = 0;var up_sl_r2 = 0;var up_sl_r3 = 0;
+   function onClick1() {
+       ns_r1 += 1;
+       document.getElementById("ns_r1").innerHTML = ns_r1;
+     };
+     function onClick2() {
+       ns_r2 += 1;
+       document.getElementById("ns_r2").innerHTML = ns_r2;
+       };
+       function onClick3() {
+       ns_r3 += 1;
+       document.getElementById("ns_r3").innerHTML = ns_r3;
+       };
+       function onClick4() {
+       ns_r4 += 1;
+       document.getElementById("ns_r4").innerHTML = ns_r4;
+       };
+       function onClick5() {
+       ns_r5 += 1;
+       document.getElementById("ns_r5").innerHTML = ns_r5;
+       };
+       function onClick6() {
+       ns_r6 += 1;
+       document.getElementById("ns_r6").innerHTML = ns_r6;
+       };
+       function onClick7() {
+       ss_r1 += 1;
+       document.getElementById("ss_r1").innerHTML = ss_r1;
+       };
+       function onClick8() {
+       ss_r2 += 1;
+       document.getElementById("ss_r2").innerHTML = ss_r2;
+       };
+       function onClick9() {
+       ss_r3 += 1;
+       document.getElementById("ss_r3").innerHTML = ss_r3;
+       };
+       function onClick10() {
+       ss_r4 += 1;
+       document.getElementById("ss_r4").innerHTML = ss_r4;
+       };
+       function onClick11() {
+       ss_r5 += 1;
+       document.getElementById("ss_r5").innerHTML = ss_r5;
+       };
+       function onClick12() {
+       ss_r6 += 1;
+       document.getElementById("ss_r6").innerHTML = ss_r6;
+       };
+       function onClick13() {
+       sl_r1 += 1;
+       document.getElementById("sl_r1").innerHTML = sl_r1;
+       };
+       function onClick14() {
+      sl_r2 += 1;
+       document.getElementById("sl_r2").innerHTML = sl_r2;
+     };
+       function onClick15() {
+       sl_r3 += 1;
+       document.getElementById("sl_r3").innerHTML = sl_r3;
+   };
+   function onClickup_1() {
+      up_ns_r1 += 1;
+       document.getElementById("up_ns_r1").innerHTML = up_ns_r1;
+     };
+     function onClickup_2() {
+      up_ns_r2 += 1;
+       document.getElementById("up_ns_r2").innerHTML = up_ns_r2;
+       };
+       function onClickup_3() {
+         up_ns_r3 += 1;
+       document.getElementById("up_ns_r3").innerHTML = up_ns_r3;
+       };
+       function onClickup_4() {
+         up_ns_r4 += 1;
+       document.getElementById("up_ns_r4").innerHTML = up_ns_r4;
+       };
+       function onClickup_5() {
+         up_ns_r5 += 1;
+       document.getElementById("up_ns_r5").innerHTML = up_ns_r5;
+       };
+       function onClickup_6() {
+       ns_r6 += 1;
+       document.getElementById("up_ns_r6").innerHTML = up_ns_r6;
+       };
+       function onClickup_7() {
+         up_ss_r1 += 1;
+       document.getElementById("up_ss_r1").innerHTML = up_ss_r1;
+       };
+       function onClickup_8() {
+         up_ss_r2 += 1;
+       document.getElementById("up_ss_r2").innerHTML = up_ss_r2;
+       };
+       function onClickup_9() {
+         up_ss_r3 += 1;
+       document.getElementById("up_ss_r3").innerHTML = up_ss_r3;
+       };
+       function onClickup_10() {
+         up_ss_r4 += 1;
+       document.getElementById("up_ss_r4").innerHTML = up_ss_r4;
+       };
+       function onClickup_11() {
+         up_ss_r5 += 1;
+       document.getElementById("up_ss_r5").innerHTML = up_ss_r5;
+       };
+       function onClickup_12() {
+         up_ss_r6 += 1;
+       document.getElementById("up_ss_r6").innerHTML = up_ss_r6;
+       };
+       function onClickup_13() {
+         up_sl_r1 += 1;
+       document.getElementById("up_sl_r1").innerHTML = up_sl_r1;
+       };
+       function onClickup_14() {
+         up_sl_r2 += 1;
+       document.getElementById("up_sl_r2").innerHTML = up_sl_r2;
+     };
+       function onClickup_15() {
+         up_sl_r3 += 1;
+       document.getElementById("up_sl_r3").innerHTML = up_sl_r3;
+   };
+   function layout(){
+    window.location.href = "add-bus.php?ns_r1=" + ns_r1 + "&ns_r2=" +ns_r2 + "&ns_r3=" +ns_r3+ "&ns_r4=" +ns_r4 + "&ns_r5=" +ns_r5 + "&ns_r6=" +ns_r6 + "&ss_r1=" +ss_r1 + "&ss_r2=" +ss_r2 + "&ss_r3=" +ss_r3 + "&ss_r4=" +ss_r4 + "&ss_r5=" +ss_r5 + "&ss_r6=" +ss_r6 + "&sl_r1=" +sl_r1 + "&sl_r2=" +sl_r2 + "&sl_r3=" +sl_r3 + "&up_ns_r1=" + up_ns_r1 + "&up_ns_r2=" +up_ns_r2 + "&up_ns_r3=" +up_ns_r3+ "&up_ns_r4=" +up_ns_r4 + "&up_ns_r5=" +up_ns_r5 + "&up_ns_r6=" +up_ns_r6 + "&up_ss_r1=" +up_ss_r1 + "&up_ss_r2=" +up_ss_r2 + "&up_ss_r3=" +up_ss_r3 + "&up_ss_r4=" +up_ss_r4 + "&up_ss_r5=" +up_ss_r5 + "&up_ss_r6=" +up_ss_r6 + "&up_sl_r1=" +up_sl_r1 + "&up_sl_r2=" +up_sl_r2 + "&up_sl_r3=" +up_sl_r3 ;
+   }
+   
+   $(document).ready(function(){
+   
+   
+   $("#seat_r1").click(function(){
+   
+   $("#row_1").append("<td  class='s1' scope='row'><img src='https://static.thenounproject.com/png/629421-200.png'  class='seat'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+   
+   $("#seat_r2").click(function(){
+   $("#row_2").append("<td  class='s1' scope='row'><img src='https://static.thenounproject.com/png/629421-200.png'  class='seat'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+   $("#seat_r3").click(function(){
+   $("#row_3").append("<td  class='s1' scope='row'><img src='https://static.thenounproject.com/png/629421-200.png'  class='seat'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+    $("#seat_r4").click(function(){
+   $("#row_5").append("<td  class='s1' scope='row'><img src='https://static.thenounproject.com/png/629421-200.png'  class='seat'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+     $("#seat_r5").click(function(){
+   $("#row_6").append("<td  class='s1' scope='row'><img src='https://static.thenounproject.com/png/629421-200.png'  class='seat'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+   
+   $("#sleeper_r1").click(function(){
+   $("#row_1").append("<td  class='s1' scope='row'><img src='https://static.thenounproject.com/png/661609-200.png'    class='seat1'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+   $("#sleeper_r2").click(function(){
+   $("#row_2").append("<td  class='s1' scope='row'><img src='https://static.thenounproject.com/png/661609-200.png'    class='seat1'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+   $("#sleeper_r3").click(function(){
+   $("#row_5").append("<td  class='s1' scope='row'><img src='https://static.thenounproject.com/png/661609-200.png'    class='seat1'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+   $("#semi_r1").click(function(){
+   $("#row_1").append("<td  class='s1' scope='row'><img src='https://static.thenounproject.com/png/429676-200.png'  class='seat2'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+   $("#semi_r2").click(function(){
+   $("#row_2").append("<td  class='s1' scope='row'><img src='https://static.thenounproject.com/png/429676-200.png'  class='seat2'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+   $("#semi_r3").click(function(){
+   $("#row_3").append("<td  class='s1' scope='row'><img src='https://static.thenounproject.com/png/429676-200.png'  class='seat2'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+   $("#semi_r4").click(function(){
+   $("#row_5").append("<td  class='s1' scope='row'><img src='https://static.thenounproject.com/png/429676-200.png'  class='seat2'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+   $("#semi_r5").click(function(){
+   $("#row_6").append("<td  class='s1' scope='row'><img src='https://static.thenounproject.com/png/429676-200.png'  class='seat2'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+    
+   $("#up_seat_r1").click(function(){
+   
+   $("#up_row_1").append("<td  class='s1' scope='row'><img src='https://static.thenounproject.com/png/629421-200.png'  class='seat'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+   
+   $("#up_seat_r2").click(function(){
+   $("#up_row_2").append("<td  class='s1' scope='row'><img src='https://static.thenounproject.com/png/629421-200.png'  class='seat'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+   $("#up_seat_r3").click(function(){
+   $("#up_row_3").append("<td  class='s1' scope='row'><img src='https://static.thenounproject.com/png/629421-200.png'  class='seat'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+    $("#up_seat_r4").click(function(){
+   $("#up_row_5").append("<td  class='s1' scope='row'><img src='https://static.thenounproject.com/png/629421-200.png'  class='seat'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+     $("#up_seat_r5").click(function(){
+   $("#up_row_6").append("<td  class='s1' scope='row'><img src='https://static.thenounproject.com/png/629421-200.png'  class='seat'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+   
+   $("#up_sleeper_r1").click(function(){
+   $("#up_row_1").append("<td  class='s1' scope='row'><img src='https://static.thenounproject.com/png/661609-200.png'    class='seat1'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+   $("#up_sleeper_r2").click(function(){
+   $("#up_row_2").append("<td  class='s1' scope='row'><img src='https://static.thenounproject.com/png/661609-200.png'    class='seat1'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+   $("#up_sleeper_r3").click(function(){
+   $("#up_row_5").append("<td  class='s1' scope='row'><img src='https://static.thenounproject.com/png/661609-200.png'    class='seat1'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+   $("#up_semi_r1").click(function(){
+   $("#up_row_1").append("<td  class='s1' scope='row'><img src='https://static.thenounproject.com/png/429676-200.png'  class='seat2'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+   $("#up_semi_r2").click(function(){
+   $("#up_row_2").append("<td  class='s1' scope='row'><img src='https://static.thenounproject.com/png/429676-200.png'  class='seat2'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+   $("#up_semi_r3").click(function(){
+   $("#up_row_3").append("<td  class='s1' scope='row'><img src='https://static.thenounproject.com/png/429676-200.png'  class='seat2'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+   $("#up_semi_r4").click(function(){
+   $("#up_row_5").append("<td  class='s1' scope='row'><img src='https://static.thenounproject.com/png/429676-200.png'  class='seat2'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+   $("#up_semi_r5").click(function(){
+   $("#up_row_6").append("<td  class='s1' scope='row'><img src='https://static.thenounproject.com/png/429676-200.png'  class='seat2'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+   // mix table
+   $("#mix_seat_r1").click(function(){
+   
+   $("#mix_row_1").append("<td  class='s1' scope='row'><img src='https://static.thenounproject.com/png/629421-200.png'  class='seat'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+   
+   $("#mix_seat_r2").click(function(){
+   $("#mix_row_2").append("<td  class='s1' scope='row'><img src='https://static.thenounproject.com/png/629421-200.png'  class='seat'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+   $("#mix_seat_r3").click(function(){
+   $("#mix_row_3").append("<td  class='s1' scope='row'><img src='https://static.thenounproject.com/png/629421-200.png'  class='seat'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+    $("#mix_seat_r4").click(function(){
+   $("#mix_row_5").append("<td  class='s1' scope='row'><img src='https://static.thenounproject.com/png/629421-200.png'  class='seat'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+     $("#mix_seat_r5").click(function(){
+   $("#mix_row_6").append("<td  class='s1' scope='row'><img src='https://static.thenounproject.com/png/629421-200.png'  class='seat'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+   
+   $("#mix_sleeper_r1").click(function(){
+   $("#mix_row_1").append("<td  class='s1' colspan='2' scope='row'><img src='https://static.thenounproject.com/png/661609-200.png'    class='seat1 '><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+   $("#mix_sleeper_r2").click(function(){
+   $("#mix_row_2").append("<td  class='s1' colspan='2' scope='row'><img src='https://static.thenounproject.com/png/661609-200.png'    class='seat1 '><button type='button' class='btndeleterowadded btn '>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+   $("#mix_sleeper_r3").click(function(){
+   $("#mix_row_5").append("<td  class='s1' colspan='2' scope='row'><img src='https://static.thenounproject.com/png/661609-200.png'    class='seat1'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+   $("#mix_semi_r1").click(function(){
+   $("#mix_row_1").append("<td  class='s1' scope='row'><img src='https://static.thenounproject.com/png/429676-200.png'  class='seat2'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+   $("#mix_semi_r2").click(function(){
+   $("#mix_row_2").append("<td  class='s1' scope='row'><img src='https://static.thenounproject.com/png/429676-200.png'  class='seat2'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+   $("#mix_semi_r3").click(function(){
+   $("#mix_row_3").append("<td  class='s1' scope='row'><img src='https://static.thenounproject.com/png/429676-200.png'  class='seat2'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+   $("#mix_semi_r4").click(function(){
+   $("#mix_row_5").append("<td  class='s1' scope='row'><img src='https://static.thenounproject.com/png/429676-200.png'  class='seat2'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+   $("#mix_semi_r5").click(function(){
+   $("#mix_row_6").append("<td  class='s1' scope='row'><img src='https://static.thenounproject.com/png/429676-200.png'  class='seat2'><button type='button' class='btndeleterowadded btn'>X</button></td>");
+   });
+   $(document).on('click', 'button.btndeleterowadded', function(){
+     $(this).closest('td').remove();
+     return false;
+   });
+    // mix table end
+   $("#add_upperdeck").click(function(){
+    $("#upperdeck").toggle();
+  });
+    $("#seater_sleeper").click(function(){
+    $("#seat_mix_developer").toggle();
+    $("#seat_developer").toggle();
+     $("#mytable").toggle();
+     $("#mixtable").toggle();
+  });
+   });
+</script>
+<div class="page-container">
+<?php include('includes/sidebar.php')?>
+<!-- start page content -->
+<div class="page-content-wrapper">
+<div class="page-content">
+   <!-- start widget -->
+   <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+         <div class="card-box">
+            <div class="card-head">
+               <header>Add Bus Seat Map</header>
+               <button class="btn btn-primary pull-right"id="add_upperdeck"> Add UpperDeck</button> &emsp;
+                <button class="btn btn-primary pull-right"id="seater_sleeper"> Seater+Sleeper</button>&nbsp;
+            </div>
+            <div class="card-body row">
+               <div class="col-md-2"></div>
+               <!--  <form action="add-bus.php" method="get"> -->
+               <div class="col-md-12 layout">
+               <h3>Lower Deck</h3>
+                  <div class="row" id="seat_developer" style="margin-top:30px;">
+                    
+                     <div class="col-md-4">
+                        <!-- seaterseat buttons -->
+                        <div class="dropdown">
+                           <button class="btn btn-primary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           <i class="fa fa-plus" aria-hidden="true"></i> Add Seater 
+                           </button>
+                           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" id="seat_r1" onClick="onClick1()">Add  row1</a>
+                              <a class="dropdown-item" id="seat_r2" onClick="onClick2()">Add  row2</a>
+                              <a class="dropdown-item" id="seat_r3" onClick="onClick3()">Add  row3</a>
+                              <a class="dropdown-item" id="seat_r4" onClick="onClick4()">Add  row4</a>
+                              <a class="dropdown-item" id="seat_r5" onClick="onClick5()">Add  row5</a>
+                              <a class="dropdown-item" id="seat_r6"onClick="onClick6()">Add  row6</a>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- seater seat button end -->
+                     <!-- semi seater start -->
+                     <div class="col-md-4">
+                        <div class="dropdown">
+                           <button class="btn btn-warning btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-left: 10px;">
+                           <i class="fa fa-plus" aria-hidden="true"></i> Add Semi-Seater 
+                           </button>
+                           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" id="semi_r1"  onClick="onClick7()">Add  row1</a>
+                              <a class="dropdown-item" id="semi_r2"  onClick="onClick8()">Add  row2</a>
+                              <a class="dropdown-item" id="semi_r3"  onClick="onClick9()">Add  row3</a>
+                              <a class="dropdown-item" id="semi_r4"  onClick="onClick10()">Add  row4</a>
+                              <a class="dropdown-item" id="semi_r5"  onClick="onClick11()">Add  row5</a>
+                              <a class="dropdown-item" id="semi_r6"  onClick="onClick12()">Add  row6</a>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- semi seater end -->
+                     <!-- sleeper start -->
+                     <div class="col-md-4">
+                        <div class="dropdown">
+                           <button class="btn btn-success btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-left: 10px;">
+                           <i class="fa fa-plus" aria-hidden="true"></i> Add Sleeper 
+                           </button>
+                           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" id="sleeper_r1"  onClick="onClick13()">Add  row1</a>
+                              <a class="dropdown-item" id="sleeper_r2"  onClick="onClick14()">Add  row2</a>
+                              <a class="dropdown-item" id="sleeper_r3"  onClick="onClick15()">Add  row3</a>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- sleeper end -->
+                  </div>
+                   <div class="row" id="seat_mix_developer" style="margin-top:30px;display: none;">
+                    
+                     <div class="col-md-4">
+                        <!-- seaterseat buttons -->
+                        <div class="dropdown">
+                           <button class="btn btn-primary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           <i class="fa fa-plus" aria-hidden="true"></i> Add Seater mix 
+                           </button>
+                           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" id="mix_seat_r1" onClick="onClick1()">Add  row1</a>
+                              <a class="dropdown-item" id="mix_seat_r2" onClick="onClick2()">Add  row2</a>
+                              <a class="dropdown-item" id="mix_seat_r3" onClick="onClick3()">Add  row3</a>
+                              <a class="dropdown-item" id="mix_seat_r4" onClick="onClick4()">Add  row4</a>
+                              <a class="dropdown-item" id="mix_seat_r5" onClick="onClick5()">Add  row5</a>
+                             
+                           </div>
+                        </div>
+                     </div>
+                     <!-- seater seat button end -->
+                     <!-- semi seater start -->
+                     <div class="col-md-4">
+                        <div class="dropdown">
+                           <button class="btn btn-warning btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-left: 10px;">
+                           <i class="fa fa-plus" aria-hidden="true"></i> Add Semi-Seater 
+                           </button>
+                           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" id="mix_semi_r1"  onClick="onClick7()">Add  row1</a>
+                              <a class="dropdown-item" id="mix_semi_r2"  onClick="onClick8()">Add  row2</a>
+                              <a class="dropdown-item" id="mix_semi_r3"  onClick="onClick9()">Add  row3</a>
+                              <a class="dropdown-item" id="mix_semi_r4"  onClick="onClick10()">Add  row4</a>
+                              <a class="dropdown-item" id="mix_semi_r5"  onClick="onClick11()">Add  row5</a>
+                             
+                           </div>
+                        </div>
+                     </div>
+                     <!-- semi seater end -->
+                     <!-- sleeper start -->
+                     <div class="col-md-4">
+                        <div class="dropdown">
+                           <button class="btn btn-success btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-left: 10px;">
+                           <i class="fa fa-plus" aria-hidden="true"></i> Add Sleeper 
+                           </button>
+                           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" id="mix_sleeper_r1"  onClick="onClick13()">Add  row1</a>
+                              <a class="dropdown-item" id="mix_sleeper_r2"  onClick="onClick14()">Add  row2</a>
+                              <a class="dropdown-item" id="mix_sleeper_r3"  onClick="onClick15()">Add  row3</a>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- sleeper end -->
+                  </div>
+                  <div class="row" style="margin-top: 40px; border: 1px solid #dee2e6; padding:10px;">
+                    <!-- normal table start -->
+                     <table class="table table-striped" id="mytable" style="margin-top: 20px;">
+                        <thead >
+                           <tr id="row_1">
+                              <td  class="s1" scope="col"><img src="https://cdn1.iconfinder.com/data/icons/transportation-vehicles-2/128/steering-wheel-512.png"  class="seat"></td>
+                              <td  class="s1" scope="col"style="display:none;"><img src="https://static.thenounproject.com/png/629421-200.png"  class="seat"></td>
+                           </tr>
+                           <tr id="row_2">
+                              <td  class="s1"  scope="col" style="color:white;">1</td>
+                              <td  class="s1"  scope="col" style="display:none;"><img src="https://static.thenounproject.com/png/429676-200.png"  class="seat2"></td>
+                           </tr>
+                           <tr id="row_3">
+                              <td  class="s1"  scope="col" style="color:white;">1</td>
+                              <td  class="s1"  scope="col" style="display:none;"><img src="https://static.thenounproject.com/png/429676-200.png"  class="seat2"></td>
+                           </tr>
+                           <tr id="row_4">
+                              <td  class="s1"  scope="col" style="color:white;">1</td>
+                              <td  class="s1"  scope="col" style="display:none;"><img src="https://static.thenounproject.com/png/429676-200.png"  class="seat2"></td>
+                           </tr>
+                           <tr id="row_5">
+                              <td  class="s1"  scope="col" style="color:white;">1</td>
+                              <td  class="s1"  scope="col" style="display:none;"><img src="https://static.thenounproject.com/png/429676-200.png"  class="seat2"></td>
+                           </tr>
+                           <tr id="row_6">
+                              <td  class="s1"  scope="col" style="color:white;">1</td>
+                              <td  class="s1"  scope="col" style="display:none;"><img src="https://static.thenounproject.com/png/429676-200.png"  class="seat2"></td>
+                           </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                     </table>
+                     <!-- normal table end -->
+                     <!-- mix table  start-->
+                     <table class="table table-striped" id="mixtable" style="margin-top: 20px; display: none;">
+                        <thead >
+                           <tr id="mix_row_1">
+                              <td  class="s1" scope="col"><img src="https://cdn1.iconfinder.com/data/icons/transportation-vehicles-2/128/steering-wheel-512.png"  class="seat"></td>
+                              <td  class="s1" scope="col"style="display:none;"><img src="https://static.thenounproject.com/png/629421-200.png"  class="seat"></td>
+                           </tr>
+                           <tr id="mix_row_2">
+                              <td  class="s1"  scope="col" style="color:white;">1</td>
+                              <td  class="s1"  scope="col" style="display:none;"><img src="https://static.thenounproject.com/png/429676-200.png"  class="seat2"></td>
+                           </tr>
+                           <tr id="mix_row_3">
+                              <td  class="s1"  scope="col" style="color:white;">1</td>
+                              <td  class="s1"  scope="col" style="display:none;"><img src="https://static.thenounproject.com/png/429676-200.png"  class="seat2"></td>
+                           </tr>
+                           <tr id="mix_row_4">
+                              <td  class="s1"  scope="col" style="color:white;">1</td>
+                              <td  class="s1"  scope="col" style="display: none;"><img src="https://static.thenounproject.com/png/429676-200.png"  class="seat2"></td>
+                           </tr>
+                           <tr id="mix_row_5">
+                              <td  class="s1"  scope="col" style="color:white;">1</td>
+                              <td  class="s1"  scope="col" style="display:none;"><img src="https://static.thenounproject.com/png/429676-200.png"  class="seat2"></td>
+                           </tr>
+                           <tr id=" mix_row_6">
+                              <td  class="s1"  scope="col" style="color:white;">1</td>
+                              <td  class="s1"  scope="col" style="display:none;"><img src="https://static.thenounproject.com/png/429676-200.png"  class="seat2"></td>
+                           </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                     </table>
+                     <!-- mix table end -->
+                  </div>
+                <div class="upperdeck" id="upperdeck" style="display:none;">
+                  <div class="row"  style="margin-top: 40px;">
+                  <div class="col-md-12">
+                  <h3>UpperDeck</h3>
+                 </div>
+                     <div class="col-md-4">
+                        <!-- seaterseat buttons -->
+                        <div class="dropdown">
+                           <button class="btn btn-primary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           <i class="fa fa-plus" aria-hidden="true"></i> Add Seater 
+                           </button>
+                           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" id="up_seat_r1" onClick="onClickup_1()">Add  row1</a>
+                              <a class="dropdown-item" id="up_seat_r2" onClick="onClickup_2()">Add  row2</a>
+                              <a class="dropdown-item" id="up_seat_r3" onClick="onClickup_3()">Add  row3</a>
+                              <a class="dropdown-item" id="up_seat_r4" onClick="onClickup_4()">Add  row4</a>
+                              <a class="dropdown-item" id="up_seat_r5" onClick="onClickup_5()">Add  row5</a>
+                              <a class="dropdown-item" id="up_seat_r6"onClick="onClickup_6()">Add  row6</a>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- seater seat button end -->
+                     <!-- semi seater start -->
+                     <div class="col-md-4">
+                        <div class="dropdown">
+                           <button class="btn btn-warning btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-left: 10px;">
+                           <i class="fa fa-plus" aria-hidden="true"></i> Add Semi-Seater 
+                           </button>
+                           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" id="up_semi_r1"  onClick="onClickup_7()">Add  row1</a>
+                              <a class="dropdown-item" id="up_semi_r2"  onClick="onClickup_8()">Add  row2</a>
+                              <a class="dropdown-item" id="up_semi_r3"  onClick="onClickup_9()">Add  row3</a>
+                              <a class="dropdown-item" id="up_semi_r4"  onClick="onClickup_10()">Add  row4</a>
+                              <a class="dropdown-item" id="up_semi_r5"  onClick="onClickup_11()">Add  row5</a>
+                              <a class="dropdown-item" id="up_semi_r6"  onClick="onClickup_12()">Add  row6</a>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- semi seater end -->
+                     <!-- sleeper start -->
+                     <div class="col-md-4">
+                        <div class="dropdown">
+                           <button class="btn btn-success btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-left: 10px;">
+                           <i class="fa fa-plus" aria-hidden="true"></i> Add Sleeper 
+                           </button>
+                           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" id="up_sleeper_r1"  onClick="onClickup_13()">Add  row1</a>
+                              <a class="dropdown-item" id="up_sleeper_r2"  onClick="onClickup_14()">Add  row2</a>
+                              <a class="dropdown-item" id="up_sleeper_r3"  onClick="onClickup_15()">Add  row3</a>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- sleeper end -->
+                  </div>
+                  <div class="row" style="margin-top: 40px; border: 1px solid #dee2e6; padding:10px;">
+                     <table class="table table-striped" id="mytable" style="margin-top: 20px ">
+                        <thead >
+                           <tr id="up_row_1">
+                              <td  class="s1" scope="col"><img src="https://cdn1.iconfinder.com/data/icons/transportation-vehicles-2/128/steering-wheel-512.png"  class="seat"></td>
+                              <td  class="s1" scope="col"style="display:none;"><img src="https://static.thenounproject.com/png/629421-200.png"  class="seat"></td>
+                           </tr>
+                           <tr id="up_row_2">
+                              <td  class="s1"  scope="col" style="color:white;">1</td>
+                              <td  class="s1"  scope="col" style="display:none;"><img src="https://static.thenounproject.com/png/429676-200.png"  class="seat2"></td>
+                           </tr>
+                           <tr id="up_row_3">
+                              <td  class="s1"  scope="col" style="color:white;">1</td>
+                              <td  class="s1"  scope="col" style="display:none;"><img src="https://static.thenounproject.com/png/429676-200.png"  class="seat2"></td>
+                           </tr>
+                           <tr id="up_row_4">
+                              <td  class="s1"  scope="col" style="color:white;">1</td>
+                              <td  class="s1"  scope="col" style="display:none;"><img src="https://static.thenounproject.com/png/429676-200.png"  class="seat2"></td>
+                           </tr>
+                           <tr id="up_row_5">
+                              <td  class="s1"  scope="col" style="color:white;">1</td>
+                              <td  class="s1"  scope="col" style="display:none;"><img src="https://static.thenounproject.com/png/429676-200.png"  class="seat2"></td>
+                           </tr>
+                           <tr id="up_row_6">
+                              <td  class="s1"  scope="col" style="color:white;">1</td>
+                              <td  class="s1"  scope="col" style="display:none;"><img src="https://static.thenounproject.com/png/429676-200.png"  class="seat2"></td>
+                           </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                     </table>
+                  </div>
+                </div>
+                  <div class="row">
+                     <button class="btn btn-primary btn-lg" type="submit" name="submit" style="margin-top: 10px;" onclick="layout()"> Add Layout</button>
+                  </div>
+               </div>
+               <div class="col-md-2"></div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- end page content -->
+<?php include('includes/tools.php')?>
+<script src="https://kit.fontawesome.com/3c4d0cb5a7.js" crossorigin="anonymous"></script>
+<!-- end page container -->
+<?php include('includes/footer.php')?>

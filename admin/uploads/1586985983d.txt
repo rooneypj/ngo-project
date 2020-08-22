@@ -1,0 +1,470 @@
+ <div class="card-box">
+               <div class="card-head"><header> Bus Sleeper Seat Map</header>
+               </div>
+               
+               
+               <div class="mdl-tabs mdl-js-tabs">
+                  <div class="mdl-tabs__tab-bar">
+                     <a href="#sl-lower" class="mdl-tabs__tab is-active">Lower Deck</a>
+                     <a href="#sl-Upper" class="mdl-tabs__tab">Upper Deck</a>
+                  </div>
+                  <div class="mdl-tabs__panel is-active p-t-20" id="sl-lower">
+                     <div class="card-body row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8 layout">
+                           <h3>Lower  Deck</h3>
+                           <div class="table-responsive">
+                           <table class="table table-bordered">
+                              
+                              <thead>
+                                 <tr>
+                                    <th  class="s1"colspan="1" scope="col"><img src="https://cdn1.iconfinder.com/data/icons/transportation-vehicles-2/128/steering-wheel-512.png"  class="seat-driver"></th>
+                                    <?php for($i=1;$i<$col;$i++) {
+                                    if ( in_array('A'.$i, $r_seats) || in_array('A'.$i, $female ) || in_array('A'.$i, $b ) )
+                                           { if(in_array('A'.$i, $r_seats)) { ?>
+                                    <th  class="s1" scope="col">
+                                        <div class="btn-group" role="group">
+                        <button id="btnGroupDrop1" type="button" class="btn btn-default dropdown-toggle seat2 resA<?= $i;?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-image: url('<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatselected.png');"></button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <a class="dropdown-item"><input type="checkbox" name="seat[]" value="A<?= $i;?>" id="A<?= $i;?>"/> <label for="A<?= $i;?>" >For Reserved Seat</label></a>
+                        <a class="dropdown-item"><input type="checkbox" name="female[]" value="A<?= $i;?>" id="FA<?= $i;?>"/> <label for="FA<?= $i;?>" >For Female Only</label></a>
+                        </div>
+                        </div>
+                                    </th>
+                                     <?php } 
+                                 else if( in_array('A'.$i, $b)) { ?>
+                                 <th  class="s1" scope="col"><input type="checkbox" name="seat[]" value="A<?= $i;?>" id="A<?= $i;?>" disabled/><label for="A<?= $i;?>" class="seat2 resA<?= $i;?>" style="background-image: url('<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatselected.png');"></label></th>
+                                     <?php } else  {?>
+                                     <th  class="s1" scope="col">
+                                        <div class="btn-group" role="group">
+                        <button id="btnGroupDrop1" type="button" class="btn btn-default dropdown-toggle seat2 resA<?= $i;?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-image: url('<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatscancelled.png');"></button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <a class="dropdown-item"><input type="checkbox" name="seat[]" value="A<?= $i;?>" id="A<?= $i;?>"/> <label for="A<?= $i;?>" >For Reserved Seat</label></a>
+                        <a class="dropdown-item"><input type="checkbox" name="female[]" value="A<?= $i;?>" id="FA<?= $i;?>"/> <label for="FA<?= $i;?>" >For Female Only</label></a>
+                        </div>
+                        </div>
+                                    </th>
+                                      <?php  } } else { ?>
+                                      <th  class="s1" scope="col">
+                                        <div class="btn-group" role="group">
+                        <button id="btnGroupDrop1" type="button" class="btn btn-default dropdown-toggle seat2 resA<?= $i;?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-image: url('<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatbooked.png');"></button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <a class="dropdown-item"><input type="checkbox" name="seat[]" value="A<?= $i;?>" id="A<?= $i;?>"/> <label for="A<?= $i;?>" >For Reserved Seat</label></a>
+                        <a class="dropdown-item"><input type="checkbox" name="female[]" value="A<?= $i;?>" id="FA<?= $i;?>"/> <label for="FA<?= $i;?>" >For Female Only</label></a>
+                        </div>
+                        </div>
+                                    </th>
+                                    <?php } ?>
+                                    <script type="text/javascript">
+                                       $(document).ready(function() {
+                                           $("#A<?= $i;?>").click(function() {
+                                               if ($(this).is(':checked')) {
+                                                   var imageUrl = "<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatselected.png";
+                                                   $(".resA<?= $i;?>").css("background-image", "url(" + imageUrl + ")");
+                                                   // $(".seat2").css("background-color", "red");
+                                       
+                                               } else {
+                                                   var imageUrl = "<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatbooked.png";
+                                                   $(".resA<?= $i;?>").css("background-image", "url(" + imageUrl + ")");
+                                               }
+                                       
+                                           });
+                                           $("#FA<?= $i;?>").click(function() {
+                                               if ($(this).is(':checked')) {
+                                                   var imageUrl = "<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatscancelled.png";
+                                                   $(".resA<?= $i;?>").css("background-image", "url(" + imageUrl + ")");
+                                                   // $(".seat2").css("background-color", "red");
+                                       
+                                               } else {
+                                                   var imageUrl = "<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatbooked.png";
+                                                   $(".resA<?= $i;?>").css("background-image", "url(" + imageUrl + ")");
+                                               }
+                                       
+                                           });
+                                       });
+                                    </script>                                 
+                                    <?php }?>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    <td  class="s1" colspan="1" scope="row"></td>
+                                    <?php for($i=1;$i<$col;$i++) {
+                                     if ( in_array('B'.$i, $r_seats) || in_array('B'.$i, $female ) || in_array('B'.$i, $b ) )
+                                           { if(in_array('B'.$i, $r_seats)) { ?>
+                                    <th  class="s1" scope="col">
+                                        <div class="btn-group" role="group">
+                        <button id="btnGroupDrop1" type="button" class="btn btn-default dropdown-toggle seat2 resB<?= $i;?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-image: url('<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatselected.png');"></button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <a class="dropdown-item"><input type="checkbox" name="seat[]" value="B<?= $i;?>" id="B<?= $i;?>"/> <label for="B<?= $i;?>" >For Reserved Seat</label></a>
+                        <a class="dropdown-item"><input type="checkbox" name="female[]" value="B<?= $i;?>" id="FB<?= $i;?>"/> <label for="FB<?= $i;?>" >For Female Only</label></a>
+                        </div>
+                        </div>
+                                    </th>
+                                     <?php } 
+                                 else if( in_array('B'.$i, $b)) { ?>
+                                 <th  class="s1" scope="col"><input type="checkbox" name="seat[]" value="B<?= $i;?>" id="B<?= $i;?>" disabled/><label for="B<?= $i;?>" class="seat2 resB<?= $i;?>" style="background-image: url('<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatselected.png');"></label></th>
+                                     <?php } else  {?>
+                                     <th  class="s1" scope="col">
+                                        <div class="btn-group" role="group">
+                        <button id="btnGroupDrop1" type="button" class="btn btn-default dropdown-toggle seat2 resB<?= $i;?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-image: url('<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatscancelled.png');"></button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <a class="dropdown-item"><input type="checkbox" name="seat[]" value="B<?= $i;?>" id="B<?= $i;?>"/> <label for="B<?= $i;?>" >For Reserved Seat</label></a>
+                        <a class="dropdown-item"><input type="checkbox" name="female[]" value="B<?= $i;?>" id="FB<?= $i;?>"/> <label for="FB<?= $i;?>" >For Female Only</label></a>
+                        </div>
+                        </div>
+                                    </th>
+                                     <?php  } } else { ?>
+                                     <th  class="s1" scope="col">
+                                        <div class="btn-group" role="group">
+                        <button id="btnGroupDrop1" type="button" class="btn btn-default dropdown-toggle seat2 resB<?= $i;?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-image: url('<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatbooked.png');"></button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <a class="dropdown-item"><input type="checkbox" name="seat[]" value="B<?= $i;?>" id="B<?= $i;?>"/> <label for="B<?= $i;?>" >For Reserved Seat</label></a>
+                        <a class="dropdown-item"><input type="checkbox" name="female[]" value="B<?= $i;?>" id="FB<?= $i;?>"/> <label for="FB<?= $i;?>" >For Female Only</label></a>
+                        </div>
+                        </div>
+                                    </th>
+                                    <?php }?>
+                                    <script type="text/javascript">
+                                       $(document).ready(function() {
+                                           $("#B<?= $i;?>").click(function() {
+                                               if ($(this).is(':checked')) {
+                                                   var imageUrl = "<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatselected.png";
+                                                   $(".resB<?= $i;?>").css("background-image", "url(" + imageUrl + ")");
+                                                   // $(".seat2").css("background-color", "red");
+                                       
+                                               } else {
+                                                   var imageUrl = "<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatbooked.png";
+                                                   $(".resB<?= $i;?>").css("background-image", "url(" + imageUrl + ")");
+                                               }
+                                       
+                                           });
+                                           $("#FB<?= $i;?>").click(function() {
+                                               if ($(this).is(':checked')) {
+                                                   var imageUrl = "<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatscancelled.png";
+                                                   $(".resB<?= $i;?>").css("background-image", "url(" + imageUrl + ")");
+                                                   // $(".seat2").css("background-color", "red");
+                                       
+                                               } else {
+                                                   var imageUrl = "<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatbooked.png";
+                                                   $(".resB<?= $i;?>").css("background-image", "url(" + imageUrl + ")");
+                                               }
+                                       
+                                           });
+                                       });
+                                    </script>
+                                    <?php }?>
+                                 </tr>
+                                 <tr>
+                                    <th  class="s1" scope="row" style="border:none!important;"></th>
+                                   <?php for($i=1;$i<$col;$i++) {?>
+                                    <td  class="s1" style="color: white;border:none!important;"><?=$i;?></td>
+                                    <?php }?>
+                                 </tr>
+                                 <tr>
+                                    <td  class="s1" colspan="1" scope="row"></td>
+                                    <?php for($i=1;$i<$col;$i++) {
+                                          if ( in_array('C'.$i, $r_seats) || in_array('C'.$i, $female ) || in_array('C'.$i, $b ) )
+                                           { if(in_array('C'.$i, $r_seats)) { ?>
+                                    <th  class="s1" scope="col">
+                                        <div class="btn-group" role="group">
+                        <button id="btnGroupDrop1" type="button" class="btn btn-default dropdown-toggle seat2 resC<?= $i;?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-image: url('<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatselected.png');"></button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <a class="dropdown-item"><input type="checkbox" name="seat[]" value="C<?= $i;?>" id="C<?= $i;?>"/> <label for="C<?= $i;?>" >For Reserved Seat</label></a>
+                        <a class="dropdown-item"><input type="checkbox" name="female[]" value="C<?= $i;?>" id="FC<?= $i;?>"/> <label for="FC<?= $i;?>" >For Female Only</label></a>
+                        </div>
+                        </div>
+                                    </th>
+                                    <?php } 
+                                 else if( in_array('C'.$i, $b)) { ?>
+                                 <th  class="s1" scope="col"><input type="checkbox" name="seat[]" value="C<?= $i;?>" id="C<?= $i;?>" disabled/><label for="C<?= $i;?>" class="seat2 resC<?= $i;?>" style="background-image: url('<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatselected.png');"></label></th>
+                                     <?php } else  {?>
+                                     <th  class="s1" scope="col">
+                                        <div class="btn-group" role="group">
+                        <button id="btnGroupDrop1" type="button" class="btn btn-default dropdown-toggle seat2 resC<?= $i;?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-image: url('<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatscancelled.png');"></button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <a class="dropdown-item"><input type="checkbox" name="seat[]" value="C<?= $i;?>" id="C<?= $i;?>"/> <label for="C<?= $i;?>" >For Reserved Seat</label></a>
+                        <a class="dropdown-item"><input type="checkbox" name="female[]" value="C<?= $i;?>" id="FC<?= $i;?>"/> <label for="FC<?= $i;?>" >For Female Only</label></a>
+                        </div>
+                        </div>
+                                    </th>
+                                    <?php  } } else { ?>
+                                    <th  class="s1" scope="col">
+                                        <div class="btn-group" role="group">
+                        <button id="btnGroupDrop1" type="button" class="btn btn-default dropdown-toggle seat2 resC<?= $i;?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-image: url('<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatbooked.png');"></button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <a class="dropdown-item"><input type="checkbox" name="seat[]" value="C<?= $i;?>" id="C<?= $i;?>"/> <label for="C<?= $i;?>" >For Reserved Seat</label></a>
+                        <a class="dropdown-item"><input type="checkbox" name="female[]" value="C<?= $i;?>" id="FC<?= $i;?>"/> <label for="FC<?= $i;?>" >For Female Only</label></a>
+                        </div>
+                        </div>
+                                    </th>
+                                    <?php } ?>
+                                    
+                                    <script type="text/javascript">
+                                       $(document).ready(function() {
+                                           $("#C<?= $i;?>").click(function() {
+                                               if ($(this).is(':checked')) {
+                                                   var imageUrl = "<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatselected.png";
+                                                   $(".resC<?= $i;?>").css("background-image", "url(" + imageUrl + ")");
+                                                   // $(".seat2").css("background-color", "red");
+                                       
+                                               } else {
+                                                   var imageUrl = "<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatbooked.png";
+                                                   $(".resC<?= $i;?>").css("background-image", "url(" + imageUrl + ")");
+                                               }
+                                       
+                                           });
+                                            $("#FC<?= $i;?>").click(function() {
+                                               if ($(this).is(':checked')) {
+                                                   var imageUrl = "<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatscancelled.png";
+                                                   $(".resC<?= $i;?>").css("background-image", "url(" + imageUrl + ")");
+                                                   // $(".seat2").css("background-color", "red");
+                                       
+                                               } else {
+                                                   var imageUrl = "<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatbooked.png";
+                                                   $(".resC<?= $i;?>").css("background-image", "url(" + imageUrl + ")");
+                                               }
+                                       
+                                           });
+                                       });
+                                    </script>
+                                    <?php }?>
+                                 </tr>
+                              </tbody>
+                           </table>
+                          </div>
+                        </div>
+                        <div class="col-md-2"></div>
+                     </div>
+                  </div>
+                  <div class="mdl-tabs__panel p-t-20" id="sl-Upper">
+                     <div class="card-body row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8 layout">
+                           <h3>Upper Deck</h3>
+                            <div class="table-responsive">
+                           <table class="table table-bordered ">
+                              <thead>
+                                 <tr>
+                                    <td  class="s1"colspan="1" scope="col"><img src="https://cdn1.iconfinder.com/data/icons/transportation-vehicles-2/128/steering-wheel-512.png"  class="seat-driver"></td>
+                                    <?php for($i=1;$i<$col;$i++) {
+                                        if ( in_array('UA'.$i, $r_seats) || in_array('UA'.$i, $female ) || in_array('UA'.$i, $b ) )
+                                           { if(in_array('UA'.$i, $r_seats)) { ?>
+                                    <td class="s1" scope="col">
+                                        <div class="btn-group" role="group">
+                        <button id="btnGroupDrop1" type="button" class="btn btn-default dropdown-toggle seat2 resUA<?= $i;?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-image: url('<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatselected.png');"></button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <a class="dropdown-item"><input type="checkbox" name="seat[]" value="UA<?= $i;?>" id="UA<?= $i;?>"/> <label for="UA<?= $i;?>" >For Reserved Seat</label></a>
+                        <a class="dropdown-item"><input type="checkbox" name="female[]" value="UA<?= $i;?>" id="FUA<?= $i;?>"/> <label for="FUA<?= $i;?>" >For Female Only</label></a>
+                        </div>
+                        </div>
+                                    </td>
+                                    <?php } 
+                                 else if( in_array('UA'.$i, $b)) { ?>
+                                 <th  class="s1" scope="col"><input type="checkbox" name="seat[]" value="UA<?= $i;?>" id="UA<?= $i;?>" disabled/><label for="UA<?= $i;?>" class="seat2 resUA<?= $i;?>" style="background-image: url('<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatselected.png');"></label></th>
+                                     <?php } else  {?>
+                                     <td class="s1" scope="col">
+                                        <div class="btn-group" role="group">
+                        <button id="btnGroupDrop1" type="button" class="btn btn-default dropdown-toggle seat2 resUA<?= $i;?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-image: url('<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatscancelled.png');"></button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <a class="dropdown-item"><input type="checkbox" name="seat[]" value="UA<?= $i;?>" id="UA<?= $i;?>"/> <label for="UA<?= $i;?>" >For Reserved Seat</label></a>
+                        <a class="dropdown-item"><input type="checkbox" name="female[]" value="UA<?= $i;?>" id="FUA<?= $i;?>"/> <label for="FUA<?= $i;?>" >For Female Only</label></a>
+                        </div>
+                        </div>
+                                    </td>
+                                     <?php  } } else { ?>
+                                     <td class="s1" scope="col">
+                                        <div class="btn-group" role="group">
+                        <button id="btnGroupDrop1" type="button" class="btn btn-default dropdown-toggle seat2 resUA<?= $i;?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-image: url('<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatbooked.png');"></button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <a class="dropdown-item"><input type="checkbox" name="seat[]" value="UA<?= $i;?>" id="UA<?= $i;?>"/> <label for="UA<?= $i;?>" >For Reserved Seat</label></a>
+                        <a class="dropdown-item"><input type="checkbox" name="female[]" value="UA<?= $i;?>" id="FUA<?= $i;?>"/> <label for="FUA<?= $i;?>" >For Female Only</label></a>
+                        </div>
+                        </div>
+                                    </td>
+                                    <?php }?>
+                                    <script type="text/javascript">
+                                       $(document).ready(function() {
+                                           $("#UA<?= $i;?>").click(function() {
+                                               if ($(this).is(':checked')) {
+                                                   var imageUrl = "<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatselected.png";
+                                                   $(".resUA<?= $i;?>").css("background-image", "url(" + imageUrl + ")");
+                                                   // $(".seat2").css("background-color", "red");
+                                       
+                                               } else {
+                                                   var imageUrl = "<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatbooked.png";
+                                                   $(".resUA<?= $i;?>").css("background-image", "url(" + imageUrl + ")");
+                                               }
+                                       
+                                           });
+                                           $("#FUA<?= $i;?>").click(function() {
+                                               if ($(this).is(':checked')) {
+                                                   var imageUrl = "<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatscancelled.png";
+                                                   $(".resUA<?= $i;?>").css("background-image", "url(" + imageUrl + ")");
+                                                   // $(".seat2").css("background-color", "red");
+                                       
+                                               } else {
+                                                   var imageUrl = "<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatbooked.png";
+                                                   $(".resUA<?= $i;?>").css("background-image", "url(" + imageUrl + ")");
+                                               }
+                                       
+                                           });
+                                       });
+                                    </script>                                 
+                                    <?php }?>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    <td  class="s1" colspan="1" scope="row"></td>
+                                    <?php for($i=1;$i<$col;$i++) {
+                                        if ( in_array('UB'.$i, $r_seats) || in_array('UB'.$i, $female ) || in_array('UB'.$i, $b ) )
+                                           { if(in_array('UB'.$i, $r_seats)) { ?>
+                                    <td  class="s1" scope="col">
+                                        <div class="btn-group" role="group">
+                        <button id="btnGroupDrop1" type="button" class="btn btn-default dropdown-toggle seat2 resUB<?= $i;?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-image: url('<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatselected.png');"></button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <a class="dropdown-item"><input type="checkbox" name="seat[]" value="UB<?= $i;?>" id="UB<?= $i;?>"/> <label for="UB<?= $i;?>" >For Reserved Seat</label></a>
+                        <a class="dropdown-item"><input type="checkbox" name="female[]" value="UB<?= $i;?>" id="FUB<?= $i;?>"/> <label for="FUB<?= $i;?>" >For Female Only</label></a>
+                        </div>
+                        </div>
+                                    </td>
+                                    <?php } 
+                                 else if( in_array('UB'.$i, $b)) { ?>
+                                 <th  class="s1" scope="col"><input type="checkbox" name="seat[]" value="UB<?= $i;?>" id="UB<?= $i;?>" disabled/><label for="UB<?= $i;?>" class="seat2 resUB<?= $i;?>" style="background-image: url('<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatselected.png');"></label></th>
+                                     <?php } else  {?>
+                                     <td  class="s1" scope="col">
+                                        <div class="btn-group" role="group">
+                        <button id="btnGroupDrop1" type="button" class="btn btn-default dropdown-toggle seat2 resUB<?= $i;?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-image: url('<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatscancelled.png');"></button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <a class="dropdown-item"><input type="checkbox" name="seat[]" value="UB<?= $i;?>" id="UB<?= $i;?>"/> <label for="UB<?= $i;?>" >For Reserved Seat</label></a>
+                        <a class="dropdown-item"><input type="checkbox" name="female[]" value="UB<?= $i;?>" id="FUB<?= $i;?>"/> <label for="FUB<?= $i;?>" >For Female Only</label></a>
+                        </div>
+                        </div>
+                                    </td>
+                                     <?php  } } else { ?>
+                                     <td  class="s1" scope="col">
+                                        <div class="btn-group" role="group">
+                        <button id="btnGroupDrop1" type="button" class="btn btn-default dropdown-toggle seat2 resUB<?= $i;?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-image: url('<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatbooked.png');"></button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <a class="dropdown-item"><input type="checkbox" name="seat[]" value="UB<?= $i;?>" id="UB<?= $i;?>"/> <label for="UB<?= $i;?>" >For Reserved Seat</label></a>
+                        <a class="dropdown-item"><input type="checkbox" name="female[]" value="UB<?= $i;?>" id="FUB<?= $i;?>"/> <label for="FUB<?= $i;?>" >For Female Only</label></a>
+                        </div>
+                        </div>
+                                    </td>
+                                    <?php } ?>
+                                    <script type="text/javascript">
+                                       $(document).ready(function() {
+                                           $("#UB<?= $i;?>").click(function() {
+                                               if ($(this).is(':checked')) {
+                                                   var imageUrl = "<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatselected.png";
+                                                   $(".resUB<?= $i;?>").css("background-image", "url(" + imageUrl + ")");
+                                                   // $(".seat2").css("background-color", "red");
+                                       
+                                               } else {
+                                                   var imageUrl = "<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatbooked.png";
+                                                   $(".resUB<?= $i;?>").css("background-image", "url(" + imageUrl + ")");
+                                               }
+                                       
+                                           });
+                                           $("#FUB<?= $i;?>").click(function() {
+                                               if ($(this).is(':checked')) {
+                                                   var imageUrl = "<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatscancelled.png";
+                                                   $(".resUB<?= $i;?>").css("background-image", "url(" + imageUrl + ")");
+                                                   // $(".seat2").css("background-color", "red");
+                                       
+                                               } else {
+                                                   var imageUrl = "<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatbooked.png";
+                                                   $(".resUB<?= $i;?>").css("background-image", "url(" + imageUrl + ")");
+                                               }
+                                       
+                                           });
+                                       });
+                                    </script>
+                                    <?php }?>
+                                 </tr>
+                                 <tr>
+                                    <td  class="s1" scope="row" style="border:none!important;"></td>
+                                     <?php for($i=1;$i<$col;$i++) {?>
+                                    <td  class="s1" style="color: white;border:none!important;"><?=$i;?></td>
+                                    <?php }?>
+                                 </tr>
+                                 <tr>
+                                    <td  class="s1" colspan="1" scope="row"></td>
+                                    <?php for($i=1;$i<$col;$i++) {
+                                        if ( in_array('UC'.$i, $r_seats) || in_array('UC'.$i, $female ) || in_array('UC'.$i, $b ) )
+                                           { if(in_array('UC'.$i, $r_seats)) { ?>
+                                    <td  class="s1" scope="col">
+                                     <div class="btn-group" role="group">
+                        <button id="btnGroupDrop1" type="button" class="btn btn-default dropdown-toggle seat2 resUC<?= $i;?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-image: url('<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatselected.png');"></button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <a class="dropdown-item"><input type="checkbox" name="seat[]" value="UC<?= $i;?>" id="UC<?= $i;?>"/> <label for="UC<?= $i;?>" >For Reserved Seat</label></a>
+                        <a class="dropdown-item"><input type="checkbox" name="female[]" value="UC<?= $i;?>" id="FUC<?= $i;?>"/> <label for="FUC<?= $i;?>" >For Female Only</label></a>
+                        </div>
+                        </div>
+                        </td>
+                         <?php } 
+                                 else if( in_array('UC'.$i, $b)) { ?>
+                                 <th  class="s1" scope="col"><input type="checkbox" name="seat[]" value="UC<?= $i;?>" id="UC<?= $i;?>" disabled/><label for="UC<?= $i;?>" class="seat2 resUC<?= $i;?>" style="background-image: url('<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatselected.png');"></label></th>
+                                     <?php } else  {?>
+                                      <td  class="s1" scope="col">
+                                     <div class="btn-group" role="group">
+                        <button id="btnGroupDrop1" type="button" class="btn btn-default dropdown-toggle seat2 resUC<?= $i;?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-image: url('<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatscancelled.png');"></button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <a class="dropdown-item"><input type="checkbox" name="seat[]" value="UC<?= $i;?>" id="UC<?= $i;?>"/> <label for="UC<?= $i;?>" >For Reserved Seat</label></a>
+                        <a class="dropdown-item"><input type="checkbox" name="female[]" value="UC<?= $i;?>" id="FUC<?= $i;?>"/> <label for="FUC<?= $i;?>" >For Female Only</label></a>
+                        </div>
+                        </div>
+                        </td>
+                         <?php } } else  {?>
+                         <td  class="s1" scope="col">
+                                     <div class="btn-group" role="group">
+                        <button id="btnGroupDrop1" type="button" class="btn btn-default dropdown-toggle seat2 resUC<?= $i;?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-image: url('<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatbooked.png');"></button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <a class="dropdown-item"><input type="checkbox" name="seat[]" value="UC<?= $i;?>" id="UC<?= $i;?>"/> <label for="UC<?= $i;?>" >For Reserved Seat</label></a>
+                        <a class="dropdown-item"><input type="checkbox" name="female[]" value="UC<?= $i;?>" id="FUC<?= $i;?>"/> <label for="FUC<?= $i;?>" >For Female Only</label></a>
+                        </div>
+                        </div>
+                        </td>
+                        <?php }?>
+                                    <script type="text/javascript">
+                                       $(document).ready(function() {
+                                           $("#UC<?= $i;?>").click(function() {
+                                               if ($(this).is(':checked')) {
+                                                   var imageUrl = "<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatselected.png";
+                                                   $(".resUC<?= $i;?>").css("background-image", "url(" + imageUrl + ")");
+                                                   // $(".seat2").css("background-color", "red");
+                                       
+                                               } else {
+                                                   var imageUrl = "<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatbooked.png";
+                                                   $(".resUC<?= $i;?>").css("background-image", "url(" + imageUrl + ")");
+                                               }
+                                       
+                                           });
+                                            $("#FUC<?= $i;?>").click(function() {
+                                               if ($(this).is(':checked')) {
+                                                   var imageUrl = "<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatscancelled.png";
+                                                   $(".resUC<?= $i;?>").css("background-image", "url(" + imageUrl + ")");
+                                                   // $(".seat2").css("background-color", "red");
+                                       
+                                               } else {
+                                                   var imageUrl = "<?=site_url(); ?>assets/img/seats/sleeper/sleeper_seatbooked.png";
+                                                   $(".resUC<?= $i;?>").css("background-image", "url(" + imageUrl + ")");
+                                               }
+                                       
+                                           });
+                                       });
+                                    </script>
+                                    <?php }?>
+                                 </tr>
+                              </tbody>
+                           </table>
+                           </div>
+                        </div>
+                        <div class="col-md-2"></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+<?php  $this->load->view("admin/common/header"); ?>
+<?php  $this->load->view("admin/common/sidebar"); ?>
